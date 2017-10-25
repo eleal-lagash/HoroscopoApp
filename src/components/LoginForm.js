@@ -1,9 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput, KeyboardAvoidingView } from 'react-native';
 
 export default class LoginForm extends React.Component {
   render() {
     return (
+      <KeyboardAvoidingView behavior= 'padding' >
         <View style={styles.loginformcontainer}>
           <TextInput underLineColorAndroid='transparent' placeholder='Correo' style={styles.textinput}></TextInput>
           <TextInput underLineColorAndroid='transparent' placeholder='Contraseña' style={styles.textinput}></TextInput>
@@ -20,6 +21,7 @@ export default class LoginForm extends React.Component {
             <Text>OLVIDAR CONTRASEÑA</Text>
           </TouchableOpacity>
         </View>
+      </KeyboardAvoidingView>
     );
   }
 }
