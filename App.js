@@ -1,14 +1,19 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
+
+import LoginForm from './src/components/LoginForm';
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
+      <Image style={styles.container} source={{uri: 'https://images.unsplash.com/photo-1468276311594-df7cb65d8df6?w=1500'}}>
+        <View style={styles.logocontainer}>
+          <Image source={require('./src/img/logo.png')} style={styles.logo}></Image>
+        </View>
+
+        <LoginForm></LoginForm>
+
+      </Image>
     );
   }
 }
@@ -16,8 +21,18 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+    alignSelf:'stretch',
+    width: null,
+    padding: 20
   },
+  logocontainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  logo: {
+    width: 140,
+    height: 140
+  }
 });
